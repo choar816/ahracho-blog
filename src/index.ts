@@ -1,4 +1,4 @@
-const express = require('express');
+import express, { Request, Response } from 'express';
 const app = express();
 
 app.get('/', (req, res) => {
@@ -6,7 +6,8 @@ app.get('/', (req, res) => {
   res.send(`Hello ${name}!`);
 });
 
-const port = parseInt(process.env.PORT) || 8080;
+const port = parseInt(`${process.env.PORT}`) || 8080;
+
 app.listen(port, () => {
   console.log(`helloworld: listening on port ${port}`);
 });
